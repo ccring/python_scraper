@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import mysql.connector
 
 search = raw_input("input a google seach term\n")
 
