@@ -12,5 +12,8 @@ different websites.
 Try something like 'python is cool'. That seems to work.
 
 The first twenty links will be displayed on the command line as well
-as anything contained in a p tag for every link. I'm still working
-on saving both the links and the p tags in a MySQL database.
+as anything contained in a p tag for every link. There might be less
+than twenty results if the urls on the page were inconsistent. There
+might also be a few cases where there are not any p tags for a given
+result. I'm still working on saving both the links and the p tags in
+a MySQL database.
