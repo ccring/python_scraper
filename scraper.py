@@ -23,13 +23,14 @@ del link_headers_one[0]
 def display_content(link_headers):
     for header in link_headers:
         result_link = header.a["href"][7:]
-        link_content = requests.get(result_link).content
-        parsed_link = BeautifulSoup(link_content, "html.parser")
-        print result_link + "\n"
-        print "Here is some relevant information from the above result:\n"
-        sub_links = parsed_link.find_all("p")
-        for p in sub_links:
-            print "   " + str(p.contents) + "\n"
+        if result_link[0] == "h":
+            link_content = requests.get(result_link).content
+            parsed_link = BeautifulSoup(link_content, "html.parser")
+            print result_link + "\n"
+            print "Here is some relevant information from the above result:\n"
+            sub_links = parsed_link.find_all("p")
+            for p in sub_links:
+                print "   " + str(p.contents) + "\n"
 
 print "Here are the first twenty results of your search:\n"
 
